@@ -5,29 +5,26 @@ body {
 }
 body {
   height: 100vh;
-  /* display: flex;
-  flex-wrap: wrap;
+  /* background-color: grey; */
+  display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
 }
 
 #container {
-  /* display: flex; */
+  background-color: rgba(136, 69, 69, 0.733);
+  width: 28%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .squares {
-  /* display: flex; */
-  background-color: rgba(238, 212, 178, 0.623);
-  border: 1px solid #d13921;
+  display: flex;
+  border: 1px solid rgb(43, 97, 43);
   width: 25px;
   height: 25px;
-
-  /* opacity: 0;
-  transition: opacity 0.4s ease; */
 }
 
 .squares:hover {
   background-color: #fff;
-
-  /* opacity: 1; */
 }
