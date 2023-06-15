@@ -7,7 +7,6 @@
 }
 
 html {
-  /* footer support */
   min-height: 100%;
 }
 body {
@@ -18,7 +17,7 @@ body {
 }
 
 #container {
-  background-color: rgba(207, 80, 80, 0.973);
+  box-shadow: rgb(0, 0, 0) 0px 3px 8px;
   width: 400px;
   display: flex;
   flex-wrap: wrap;
@@ -26,11 +25,11 @@ body {
 
 .squares {
   display: flex;
-  border: 1px solid rgb(43, 97, 43);
+  /* border: 1px solid black; */
   width: 25px;
   height: 25px;
 }
 
 .squares:hover {
-  background-color: #fff;
+  background-color: #291c1c9c;
 }
