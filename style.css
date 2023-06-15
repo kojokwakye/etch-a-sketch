@@ -1,7 +1,14 @@
-html,
-body {
-  margin: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   padding: 0;
+  margin: 0;
+}
+
+html {
+  /* footer support */
+  min-height: 100%;
 }
 body {
   height: 100vh;
@@ -11,17 +18,14 @@ body {
 }
 
 #container {
-  background-color: rgba(136, 69, 69, 0.733);
-  width: 432px;
-  height: 431px;
+  background-color: rgba(207, 80, 80, 0.973);
+  width: 400px;
   display: flex;
   flex-wrap: wrap;
-  /* border: 0; */
 }
 
 .squares {
   display: flex;
-  /* flex-wrap: wrap; */
   border: 1px solid rgb(43, 97, 43);
   width: 25px;
   height: 25px;
