@@ -12,7 +12,7 @@ const shadeBoxes = document.querySelectorAll(".squares");
 // mouse enter
 shadeBoxes.forEach((squares) => {
   squares.addEventListener("mouseenter", () => {
-    squares.style.border = "10px solid green ";
+    squares.style.backgroundColor = "green ";
   });
 });
 
