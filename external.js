@@ -7,7 +7,8 @@ for (let i = 0; i < 16; i++) {
     container.appendChild(squares);
   }
 }
-
+// buttons
+const setGrid = document.getElementById("set-grid");
 const drawButton = document.getElementById("draw");
 const eraseButton = document.getElementById("erase");
 const rgbButton = document.getElementById("rgb-shade");
@@ -25,7 +26,6 @@ drawButton.addEventListener("click", draw);
 
 // erase boxes
 const eraseBoxes = document.querySelectorAll(".squares");
-
 function eraser() {
   eraseBoxes.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
@@ -40,9 +40,12 @@ const rainbowShade = document.querySelectorAll(".squares");
 function rgbShade() {
   rainbowShade.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      squares.style.backgroundColor = "red";
+      const red = Math.floor(Math.random() * 256);
+      const green = Math.floor(Math.random() * 256);
+      const blue = Math.floor(Math.random() * 256);
+      const rgbColor = `rgb(${red}, ${green}, ${blue})`;
+      squares.style.backgroundColor = rgbColor;
     });
   });
 }
-
 rgbButton.addEventListener("click", rgbShade);
