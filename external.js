@@ -28,5 +28,4 @@ function eraser() {
       squares.style.backgroundColor = "";
     });
   });
-  // eraser();
 }
