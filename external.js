@@ -15,7 +15,7 @@ const eraseButton = document.getElementById("erase");
 function draw() {
   shadeBoxes.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      squares.style.backgroundColor = "green";
+      squares.style.backgroundColor = "black";
     });
   });
 }
