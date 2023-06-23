@@ -7,11 +7,13 @@ for (let i = 0; i < 16; i++) {
     container.appendChild(squares);
   }
 }
-const shadeBoxes = document.querySelectorAll(".squares");
+
 const drawButton = document.getElementById("draw");
 const eraseButton = document.getElementById("erase");
+const rgbButton = document.getElementById("rgb-shade");
 
-// mouse enter
+// draw on boxes
+const shadeBoxes = document.querySelectorAll(".squares");
 function draw() {
   shadeBoxes.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
@@ -32,3 +34,15 @@ function eraser() {
   });
 }
 eraseButton.addEventListener("click", eraser);
+
+// rainbow-shade
+const rainbowShade = document.querySelectorAll(".squares");
+function rgbShade() {
+  rainbowShade.forEach((squares) => {
+    squares.addEventListener("mouseenter", () => {
+      squares.style.backgroundColor = "red";
+    });
+  });
+}
+
+rgbButton.addEventListener("click", rgbShade);
