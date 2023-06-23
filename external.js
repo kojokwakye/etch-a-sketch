@@ -8,12 +8,13 @@ for (let i = 0; i < 16; i++) {
   }
 }
 const shadeBoxes = document.querySelectorAll(".squares");
+const drawButton = document.getElementById("#draw");
+const eraseButton = document.getElementById("#erase");
 
 // mouse enter
-
 function draw() {
   shadeBoxes.forEach((squares) => {
-    squares.addEventListener("mouseenter", () => {
+    squares.addEventListener("click", "mouseenter", () => {
       squares.style.backgroundColor = "green ";
     });
   });
