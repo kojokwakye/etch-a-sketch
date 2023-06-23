@@ -10,10 +10,22 @@ for (let i = 0; i < 16; i++) {
 const shadeBoxes = document.querySelectorAll(".squares");
 
 // mouse enter
-shadeBoxes.forEach((squares) => {
-  squares.addEventListener("mouseenter", () => {
-    squares.style.backgroundColor = "green ";
-  });
-});
 
-// mouse leave
+function draw() {
+  shadeBoxes.forEach((squares) => {
+    squares.addEventListener("mouseenter", () => {
+      squares.style.backgroundColor = "green ";
+    });
+  });
+}
+
+// erase boxes
+const eraseBoxes = document.querySelectorAll(".squares");
+
+function eraser() {
+  eraseBoxes.forEach((squares) => {
+    squares.addEventListener("mouseleave", () => {
+      squares.style.backgroundColor = "";
+    });
+  });
+}
