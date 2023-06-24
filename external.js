@@ -38,22 +38,11 @@ container.addEventListener("click", () => {
 });
 
 // erase boxes
-const eraseBoxes = document.querySelectorAll(".squares");
-function eraser() {
-  eraseBoxes.forEach((squares) => {
-    squares.addEventListener("mouseenter", () => {
-      // check erasing
-      if (stopPencil) {
-        squares.style.backgroundColor = "";
-      }
-    });
-  });
+function clearGird() {
+  const eraseGrid = document.querySelectorAll(".squares");
+  eraseGrid.forEach((squares) => (squares.style.backgroundColor = ""));
 }
-// stop erasing when clicking on the grid
-eraseButton.addEventListener("click", () => {
-  stopPencil = true;
-  eraser();
-});
+eraseButton.addEventListener("click", clearGird);
 
 // rainbow-shade
 const rainbowShade = document.querySelectorAll(".squares");

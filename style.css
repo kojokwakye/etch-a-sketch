@@ -6,9 +6,13 @@
   margin: 0;
 }
 
-/* html {
-  min-height: 100%;
-} */
+h1 {
+  /* outline: 1px solid red; */
+  font-weight: lighter;
+  margin: 10px;
+  width: 450px;
+  border-bottom: 1px solid black;
+}
 body {
   background: cornflowerblue;
   min-height: 100vh;
@@ -16,6 +20,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "Space Mono", monospace;
+  /* text-align: center; */
 }
 .main {
   display: flex;
@@ -34,11 +40,11 @@ body {
 }
 
 .buttons {
+  /* outline: 1px solid red; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* outline: 1px solid red; */
   width: 350px;
 }
 
@@ -62,6 +68,18 @@ button:hover {
 
 #erase:hover {
   background: transparent;
+}
+
+.links {
+  /* outline: none; */
+  /* outline: 1px solid black; */
+  border-bottom: 1px solid black;
+  width: 250px;
+  cursor: pointer;
+  padding: 1em 1.5em;
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* .footer {
