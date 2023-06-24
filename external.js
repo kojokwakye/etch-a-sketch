@@ -9,7 +9,7 @@ for (let i = 0; i < 16; i++) {
 }
 
 // variable to track if drawing is allowed or not
-let isDrawing = false;
+let stopPencil = false;
 
 // buttons
 const setGrid = document.getElementById("set-grid");
@@ -23,7 +23,7 @@ function draw() {
   shadeBoxes.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
       // check if drawing is allowed
-      if (isDrawing) {
+      if (stopPencil) {
         squares.style.backgroundColor = "black";
       }
     });
@@ -31,13 +31,13 @@ function draw() {
 }
 
 drawButton.addEventListener("click", () => {
-  isDrawing = true;
+  stopPencil = true;
   draw();
 });
 
 // stop drawing when clicking on the grid
 container.addEventListener("click", () => {
-  isDrawing = false;
+  stopPencil = false;
 });
 
 // erase boxes
@@ -46,7 +46,7 @@ function eraser() {
   eraseBoxes.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
       // check erasing
-      if (isDrawing) {
+      if (stopPencil) {
         squares.style.backgroundColor = "";
       }
     });
@@ -54,7 +54,7 @@ function eraser() {
 }
 // stop erasing when clicking on the grid
 eraseButton.addEventListener("click", () => {
-  isDrawing = true;
+  stopPencil = true;
   eraser();
 });
 
@@ -64,7 +64,7 @@ function rgbShade() {
   rainbowShade.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
       // check drawing
-      if (isDrawing) {
+      if (stopPencil) {
         const red = Math.floor(Math.random() * 256);
         const green = Math.floor(Math.random() * 256);
         const blue = Math.floor(Math.random() * 256);
@@ -76,6 +76,6 @@ function rgbShade() {
 }
 // stop drawing when clicking on the grid
 rgbButton.addEventListener("click", () => {
-  isDrawing = true;
+  stopPencil = true;
   rgbShade();
 });
