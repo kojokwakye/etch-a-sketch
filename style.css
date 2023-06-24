@@ -31,7 +31,6 @@ body {
 }
 
 .buttons {
-  outline: 1px solid green;
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -45,15 +44,16 @@ button {
   cursor: pointer;
   background: transparent;
   border: 1px solid #000000c4;
+  box-shadow: rgb(7, 7, 7) 0px 3px 8px;
   outline: none;
   padding: 1em 1.5em;
 }
 button:hover {
-  background-color: #00000086;
+  background-color: black;
   transition: 0.7s;
   color: whitesmoke;
 }
 
 #erase:hover {
-  background-color: transparent;
+  background: transparent;
 }

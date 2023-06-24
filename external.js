@@ -12,29 +12,26 @@ for (let i = 0; i < 16; i++) {
 let stopPencil = false;
 
 // buttons
-const setGrid = document.getElementById("set-grid");
 const drawButton = document.getElementById("draw");
-const eraseButton = document.getElementById("erase");
 const rgbButton = document.getElementById("rgb-shade");
+const eraseButton = document.getElementById("erase");
 
 // draw on boxes
 const shadeBoxes = document.querySelectorAll(".squares");
 function draw() {
   shadeBoxes.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      // check if drawing is allowed
+      // check drawing
       if (stopPencil) {
         squares.style.backgroundColor = "black";
       }
     });
   });
 }
-
 drawButton.addEventListener("click", () => {
   stopPencil = true;
   draw();
 });
-
 // stop drawing when clicking on the grid
 container.addEventListener("click", () => {
   stopPencil = false;
