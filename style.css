@@ -6,34 +6,41 @@
   margin: 0;
 }
 
-html {
+/* html {
   min-height: 100%;
-}
+} */
 body {
   background: cornflowerblue;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
-
+.main {
+  margin-top: auto;
+  display: flex;
+}
 #container {
   box-shadow: rgb(0, 0, 0) 0px 3px 8px;
-  width: 400px;
+  width: 800px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .squares {
-  border: 1px solid#000000c4;
+  border: 1px solid black;
   width: 25px;
   height: 25px;
 }
 
 .buttons {
-  margin: 20px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
+  outline: 1px solid red;
+  width: 350px;
 }
 
 button {
@@ -56,4 +63,8 @@ button:hover {
 
 #erase:hover {
   background: transparent;
+}
+
+.footer {
+  margin-top: auto;
 }
