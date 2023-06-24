@@ -10,6 +10,7 @@ html {
   min-height: 100%;
 }
 body {
+  background: cornflowerblue;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -24,13 +25,35 @@ body {
 }
 
 .squares {
-  border: 1px solid black;
+  border: 1px solid#000000c4;
   width: 25px;
   height: 25px;
 }
 
-/* hover effect for testing  */
+.buttons {
+  outline: 1px solid green;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
 
-/* .squares:hover {
-  background-color: #291c1c9c;
-} */
+button {
+  color: #000000c4;
+  font-size: 20px;
+  margin: 1em 0.8em;
+  width: 250px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #000000c4;
+  outline: none;
+  padding: 1em 1.5em;
+}
+button:hover {
+  background-color: #00000086;
+  transition: 0.7s;
+  color: whitesmoke;
+}
+
+#erase:hover {
+  background-color: transparent;
+}
