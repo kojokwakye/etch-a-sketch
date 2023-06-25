@@ -12,7 +12,7 @@ h1 {
   margin: 10px;
   width: 450px;
   border-bottom: 1px solid white;
-  font-size: 3em;
+  /* font-size: 3em;   */
   font-weight: bold;
 }
 body {
@@ -23,14 +23,15 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Space Mono", monospace;
-  /* text-align: center; */
+  text-align: center;
 }
 .main {
   display: flex;
 }
 #container {
   box-shadow: rgb(0, 0, 0) 0px 3px 8px;
-  width: 800px;
+  width: 400px;
+  height: 400px;
   display: flex;
   flex-wrap: wrap;
 }
