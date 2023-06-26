@@ -6,16 +6,11 @@
   margin: 0;
 }
 
-* {
-  /* outline: 1px solid red; */
-}
-
 .title {
-  writing-mode: vertical-lr;
   text-align: center;
   font-size: 20px;
   font-weight: bold;
-  border-right: 1px solid black;
+  /* border-right: 1px solid black; */
 }
 body {
   background: cornflowerblue;
@@ -65,9 +60,9 @@ button {
   box-shadow: rgb(7, 7, 7) 0px 3px 8px;
 }
 button:hover {
-  /* background-color: white;
+  background-color: white;
   transition: 0.7s;
-  color: black; */
+  color: black;
 }
 
 #erase:hover {
