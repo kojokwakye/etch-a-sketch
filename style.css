@@ -14,11 +14,11 @@
   font-size: 20px;
   font-weight: bolder;
   border-bottom: 2px solid black;
-  margin-bottom: auto;
+  /* margin-bottom: 50px; */
   width: 250px;
 }
 body {
-  background: cornflowerblue;
+  background: #b5c7e6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,6 +31,7 @@ body {
 .main {
   display: flex;
 }
+
 #container {
   box-shadow: rgb(0, 0, 0) 0px 3px 8px;
   width: 400px;
@@ -63,7 +64,7 @@ button {
   border: 1px solid #000000c4;
   outline: none;
   padding: 1em 1.5em;
-  margin: 0.5em 0.5em;
+  margin: auto;
   box-shadow: rgb(7, 7, 7) 0px 3px 8px;
 }
 
@@ -77,21 +78,16 @@ button {
   margin: 0.5em 0.5em;
   box-shadow: rgb(7, 7, 7) 0px 3px 8px;
 }
+
 .choices {
   width: 266px;
+  margin: auto;
 }
+
 button:hover {
   background-color: white;
   transition: 0.7s;
   color: black;
-}
-#draw:hover {
-  color: white;
-  background: #000;
-}
-
-#erase:hover {
-  background: transparent;
 }
 
 .links {
