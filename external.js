@@ -1,4 +1,5 @@
 const container = document.getElementById("container");
+const colorPicker = document.getElementById("picker");
 
 for (let i = 0; i < 16; i++) {
   for (let j = 0; j < 16; j++) {
@@ -13,6 +14,7 @@ let stopPencil = false;
 
 // buttons
 const drawButton = document.getElementById("draw");
+const pickerButton = document.getElementById("picker");
 const rgbButton = document.getElementById("rgb-shade");
 const eraseButton = document.getElementById("erase");
 
@@ -31,6 +33,27 @@ function draw() {
 drawButton.addEventListener("click", () => {
   stopPencil = true;
   draw();
+});
+// stop drawing when clicking on the grid
+container.addEventListener("click", () => {
+  stopPencil = false;
+});
+
+// color picker
+const chooseColor = document.querySelectorAll(".squares");
+function chosenShade() {
+  chooseColor.forEach((squares) => {
+    squares.addEventListener("mouseenter", () => {
+      // check drawing
+      if (stopPencil) {
+        squares.style.backgroundColor = colorPicker.value;
+      }
+    });
+  });
+}
+pickerButton.addEventListener("click", () => {
+  stopPencil = true;
+  chosenShade();
 });
 // stop drawing when clicking on the grid
 container.addEventListener("click", () => {
