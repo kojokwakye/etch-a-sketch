@@ -14,26 +14,28 @@
   font-size: 20px;
   font-weight: bolder;
   border-bottom: 2px solid black;
-  margin-bottom: auto;
+  /* margin-bottom: 50px; */
   width: 250px;
 }
 body {
-  background: cornflowerblue;
+  background: #b5c7e6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "Space Mono", monospace;
+  font-size: 1em;
   overflow: hidden;
 }
 .main {
   display: flex;
 }
+
 #container {
   box-shadow: rgb(0, 0, 0) 0px 3px 8px;
   width: 400px;
-  /* height: 400px; */
+  height: 100%;
 
   display: flex;
   flex-wrap: wrap;
@@ -49,14 +51,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15px;
-  /* justify-content: center; */
+  /* top | left and right | bottom  */
+  margin: 0 2em 0 auto;
 }
 
 button {
   color: #000000c4;
-  font-size: 15px;
+  font-size: 1em;
   width: 250px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #000000c4;
+  outline: none;
+  padding: 1em 1.5em;
+  margin: auto;
+  box-shadow: rgb(7, 7, 7) 0px 3px 8px;
+}
+
+#picker {
+  width: 100px;
   cursor: pointer;
   background: transparent;
   border: 1px solid #000000c4;
@@ -65,18 +78,16 @@ button {
   margin: 0.5em 0.5em;
   box-shadow: rgb(7, 7, 7) 0px 3px 8px;
 }
+
+.choices {
+  width: 266px;
+  margin: auto;
+}
+
 button:hover {
   background-color: white;
   transition: 0.7s;
   color: black;
-}
-#draw:hover {
-  color: white;
-  background: #000;
-}
-
-#erase:hover {
-  background: transparent;
 }
 
 .links {
@@ -84,10 +95,19 @@ button:hover {
   margin-top: auto;
   display: flex;
   justify-content: space-around;
-  width: 250px;
+  width: 266px;
+}
+
+img {
+  width: 35px;
+  height: 35px;
 }
 
 .github-icon:hover,
 .code-icon:hover {
   opacity: 0.5;
+}
+
+@media screen {
+  /* maybe never 30/06/23  */
 }

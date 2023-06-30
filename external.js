@@ -1,4 +1,5 @@
 const container = document.getElementById("container");
+const colorPicker = document.getElementById("picker");
 
 for (let i = 0; i < 16; i++) {
   for (let j = 0; j < 16; j++) {
@@ -12,31 +13,36 @@ for (let i = 0; i < 16; i++) {
 let stopPencil = false;
 
 // buttons
-const drawButton = document.getElementById("draw");
+const pickerButton = document.getElementById("picker");
 const rgbButton = document.getElementById("rgb-shade");
 const eraseButton = document.getElementById("erase");
 
-// draw on boxes
-const shadeBoxes = document.querySelectorAll(".squares");
-function draw() {
-  shadeBoxes.forEach((squares) => {
+// color picker
+const chooseColor = document.querySelectorAll(".squares");
+function chosenShade() {
+  chooseColor.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
       // check drawing
       if (stopPencil) {
-        squares.style.backgroundColor = "black";
+        squares.style.backgroundColor = colorPicker.value;
       }
     });
   });
 }
-drawButton.addEventListener("click", () => {
+pickerButton.addEventListener("click", () => {
   stopPencil = true;
-  draw();
+  chosenShade();
 });
 // stop drawing when clicking on the grid
 container.addEventListener("click", () => {
   stopPencil = false;
 });
 
+//
+//
+//
+//
+//
 // erase boxes
 function clearGird() {
   const eraseGrid = document.querySelectorAll(".squares");
@@ -44,6 +50,11 @@ function clearGird() {
 }
 eraseButton.addEventListener("click", clearGird);
 
+//
+//
+//
+//
+//
 // rainbow-shade
 const rainbowShade = document.querySelectorAll(".squares");
 function rgbShade() {
