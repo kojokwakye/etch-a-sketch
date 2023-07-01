@@ -84,8 +84,13 @@ button {
   margin: auto;
 }
 
+#black-pencil:hover {
+  background-color: black;
+  color: white;
+}
+
 button:hover {
-  background-color: white;
+  background-color: #00000061;
   transition: 0.7s;
   color: black;
 }
