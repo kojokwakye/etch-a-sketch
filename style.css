@@ -18,7 +18,7 @@
   margin-bottom: 30px;
 }
 body {
-  background: #0458ff17;
+  background: #1c397481;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -34,6 +34,8 @@ body {
 
 #container {
   /* box-shadow: rgb(0, 0, 0) 0px 3px 8px; */
+  /* background: #0458ff17; */
+  background-color: #232e4452;
   width: 400px;
   height: 100%;
   display: flex;

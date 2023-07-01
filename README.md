@@ -24,3 +24,7 @@ The Etch-a-Sketch program is a browser application that allows users to draw on 
 6. The program provides a restart button that clears the grid by refreshing the page.
 
 7. Users can switch between the color picker and RGB modes to create different effects on the grid.
+
+# Minor additions
+
+1. Added a screenshot feature.
