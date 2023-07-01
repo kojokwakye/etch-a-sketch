@@ -14,11 +14,11 @@
   font-size: 20px;
   font-weight: bolder;
   border-bottom: 2px solid black;
-  /* margin-bottom: 50px; */
   width: 250px;
+  margin-bottom: 30px;
 }
 body {
-  background: #e5e7eb;
+  background: #0458ff17;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -46,18 +46,26 @@ body {
   height: 25px;
 }
 
-.buttons {
+.options {
   display: flex;
   flex-direction: column;
+  margin-right: 50px;
+  justify-content: space-evenly;
   align-items: center;
-  /* top | left and right | bottom  */
-  margin: 0 2em 0 auto;
+}
+
+.buttons {
+  height: 170px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 310px;
+  margin: 20px;
 }
 
 button {
   color: #000000c4;
   font-size: 1em;
-  width: 250px;
+  width: 150px;
   cursor: pointer;
   background: transparent;
   border: 1px solid #000000c4;
@@ -79,8 +87,8 @@ button {
 }
 
 .choices {
-  width: 266px;
-  margin: auto;
+  /* width: 266px;
+  margin: auto; */
 }
 
 #black-pencil:hover {
@@ -96,7 +104,6 @@ button:hover {
 
 .links {
   cursor: pointer;
-  margin-top: auto;
   display: flex;
   justify-content: space-around;
   width: 266px;

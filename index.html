@@ -17,19 +17,30 @@
       type="image/x-icon"
     />
     <script src="external.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
   </head>
   <body>
     <div class="main">
-      <div class="buttons">
+      <div class="options">
         <span class="title">etch-a-sketch</span>
         <div class="choices">
           <input type="color" id="picker" value="#000000" />
           <span>pick a color</span>
         </div>
 
-        <button id="black-pencil">black pencil</button>
-        <button id="rgb-shade">rgb</button>
-        <button id="reset">restart</button>
+        <div class="buttons">
+          <div class="pencil-rgb">
+            <button id="black-pencil">black pencil</button>
+            <button id="rgb-shade">rgb</button>
+          </div>
+
+          <div class="restart-screenshot">
+            <button id="reset">restart</button>
+            <button id="screenshot">screenshot</button>
+          </div>
+        </div>
         <div class="links">
           <a
             class="github-icon"
