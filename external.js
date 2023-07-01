@@ -13,9 +13,16 @@ for (let i = 0; i < 16; i++) {
 let stopPencil = false;
 let checkRGB = false;
 
+// stop drawing when clicking on the grid
+container.addEventListener("click", () => {
+  stopPencil = false;
+  checkRGB = false;
+});
+
 // buttons
 const pickerButton = document.getElementById("picker");
 const rgbButton = document.getElementById("rgb-shade");
+const resetButton = document.getElementById("reset");
 const eraseButton = document.getElementById("erase");
 
 // color picker
@@ -35,18 +42,6 @@ pickerButton.addEventListener("click", () => {
   checkRGB = false;
   chosenShade();
 });
-// stop drawing when clicking on the grid
-container.addEventListener("click", () => {
-  stopPencil = false;
-  checkRGB = false;
-});
-
-// erase boxes
-function clearGrid() {
-  const eraseGrid = document.querySelectorAll(".squares");
-  eraseGrid.forEach((squares) => (squares.style.backgroundColor = ""));
-}
-eraseButton.addEventListener("click", clearGrid);
 
 // rainbow-shade
 const rainbowShade = document.querySelectorAll(".squares");
@@ -64,9 +59,31 @@ function rgbShade() {
     });
   });
 }
-// stop drawing when clicking on the grid
+
 rgbButton.addEventListener("click", () => {
   stopPencil = true;
   checkRGB = true;
   rgbShade();
 });
+
+// eraser
+const eraseBox = document.querySelectorAll(".squares");
+function eraseSquare() {
+  eraseBox.forEach((squares) => {
+    squares.addEventListener("mouseenter", () => {
+      // erase squares
+      if (stopPencil && squares.style.backgroundColor === "") {
+        squares.style.backgroundColor = "";
+      }
+    });
+  });
+}
+eraseButton.addEventListener("click", eraseSquare);
+
+// reset boxes
+function clearGrid() {
+  // const resetGrid = document.querySelectorAll(".squares");
+  // resetGrid.forEach((squares) => (squares.style.backgroundColor = ""));
+  location.reload();
+}
+resetButton.addEventListener("click", clearGrid);
