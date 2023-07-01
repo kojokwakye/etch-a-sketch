@@ -23,7 +23,7 @@ function chosenShade() {
   chooseColor.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
       // check drawing
-      if (stopPencil) {
+      if (stopPencil && squares.style.backgroundColor == "") {
         squares.style.backgroundColor = colorPicker.value;
       }
     });
