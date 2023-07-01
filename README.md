@@ -1,17 +1,13 @@
 # [ETCH-A-SKETCH ](https://kojokwakye.github.io/etch-a-sketch/)
 
 A browser version of something between a sketchpad and an etch-a-sketch.  
-this program allows users to draw on the grid using a chosen color or random RGB colors, as well as erasing and resetting the drawing when needed.
+This program allows users to draw on the grid using a chosen color or random RGB colors, as well as erasing and resetting the drawing when needed.
 
 ## SCREENSHOT
-
----
 
 ![demo](media/Screenshot%20from%202023-07-01%2016-39-28.png)
 
 ## MANUAL
-
----
 
 The Etch-a-Sketch program is a browser application that allows users to draw on a grid using different colors. Here's a summary of its functionality:
 
