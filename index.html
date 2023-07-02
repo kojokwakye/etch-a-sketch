@@ -41,6 +41,21 @@
             <button id="screenshot">screenshot</button>
           </div>
         </div>
+        <div class="slider-section">
+          <div class="gridDimension">
+            <label for="gridSize">Select Grid Size:</label>
+            <output>50</output> x <output>50</output>
+          </div>
+          <input
+            id="gridSize"
+            type="range"
+            name="gridSize"
+            value="50"
+            step="1"
+            min="1"
+            max="100"
+          />
+        </div>
         <div class="links">
           <a
             class="github-icon"
@@ -57,15 +72,7 @@
           /></a>
         </div>
       </div>
-      <div id="container"></div>
     </div>
-    <input
-      type="range"
-      min="1"
-      max="64"
-      value="10"
-      class="input-slider"
-      id="slider"
-    />
+    <div id="container"></div>
   </body>
 </html>

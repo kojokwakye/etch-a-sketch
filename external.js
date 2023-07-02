@@ -33,6 +33,7 @@ function createGrid(col, rows) {
   }
   container.style.gridTemplateColumns = `repeat(${col}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+  container.style.backgroundColor = "#b5d3edbd";
   container.innerHTML = "";
   container.appendChild(fragment);
   attachEventListeners();

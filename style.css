@@ -1,12 +1,21 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
-}
-* {
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   /* outline: 1px solid red; */
+}
+
+body {
+  background: #b5d3eda1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Mono", monospace;
+  font-size: 1em;
 }
 
 .title {
@@ -14,54 +23,48 @@
   font-size: 20px;
   font-weight: bolder;
   border-bottom: 2px solid black;
-  width: 250px;
-  margin-bottom: 30px;
-}
-body {
-  background: #1c397481;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Space Mono", monospace;
-  font-size: 1em;
-  overflow: hidden;
 }
 .main {
-  display: flex;
+  /* display: flex; */
 }
 
 #container {
-  /* box-shadow: rgb(0, 0, 0) 0px 3px 8px; */
-  /* background: #0458ff17; */
-  background-color: #232e4452;
-  width: 400px;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  width: 510px;
+  height: 510px;
+  display: grid;
+  border: 1px solid black;
 }
 
 .squares {
-  border: 1px solid black;
-  width: 25px;
-  height: 25px;
+  /* border: 0.5px solid rgba(5, 5, 5, 0.452); */
+}
+.gridDimension {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input[type="range"] {
+  margin-bottom: 40px;
 }
 
 .options {
   display: flex;
+  margin-right: 40px;
+  flex-wrap: wrap;
   flex-direction: column;
-  margin-right: 50px;
-  justify-content: space-evenly;
-  align-items: center;
+  height: 510px;
+  justify-content: space-between;
 }
 
 .buttons {
-  height: 170px;
   display: flex;
+
+  margin: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
   flex-wrap: wrap;
-  width: 310px;
-  margin: 20px;
 }
 
 button {
@@ -76,7 +79,12 @@ button {
   margin: auto;
   box-shadow: rgb(7, 7, 7) 0px 3px 8px;
 }
-
+.slider-section {
+  text-align: center;
+}
+.choices {
+  text-align: center;
+}
 #picker {
   width: 100px;
   cursor: pointer;
@@ -103,7 +111,6 @@ button:hover {
   cursor: pointer;
   display: flex;
   justify-content: space-around;
-  width: 266px;
 }
 
 img {
