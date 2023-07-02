@@ -112,6 +112,7 @@ function clearGrid() {
 }
 resetButton.addEventListener("click", clearGrid);
 
+// screenshot
 $("#screenshot").on("click", function () {
   html2canvas(document.querySelector("#container")).then((canvas) => {
     canvas.toBlob(function (blob) {
