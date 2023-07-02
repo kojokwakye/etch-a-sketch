@@ -21,10 +21,14 @@ The Etch-a-Sketch program is a browser application that allows users to draw on 
 
 5. Additionally, there is an RGB mode button that enables random color generation. In this mode, hovering over squares applies random RGB colors to the grid.
 
-6. The program provides a restart button that clears the grid by refreshing the page.
+6. There's a slider for choosing different grids sizes.
 
-7. Users can switch between the color picker and RGB modes to create different effects on the grid.
+7. The program provides a restart button that clears the grid by refreshing the page.
+
+8. Users can switch between the color picker and RGB modes to create different effects on the grid.
 
 # Minor additions
 
 1. Added a screenshot feature.
+
+2. Somehow mangaged to add a slider that changes the size of the grids. Limit is 100 X 100
