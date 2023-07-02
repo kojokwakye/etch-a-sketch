@@ -88,11 +88,6 @@ button {
   box-shadow: rgb(7, 7, 7) 0px 3px 8px;
 }
 
-.choices {
-  /* width: 266px;
-  margin: auto; */
-}
-
 #black-pencil:hover {
   background-color: black;
   color: white;
