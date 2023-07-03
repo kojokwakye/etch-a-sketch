@@ -27,8 +27,8 @@ The Etch-a-Sketch program is a browser application that allows users to draw on 
 
 8. Users can switch between the color picker and RGB modes to create different effects on the grid.
 
-# Minor additions
+## Additions
 
 1. Added a screenshot feature.
 
-2. Somehow mangaged to add a slider that changes the size of the grids. Limit is 100 X 100
+2. Somehow managed to add a slider that changes the size of the grids. Limit is 100 X 100
