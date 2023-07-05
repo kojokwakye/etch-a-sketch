@@ -24,9 +24,6 @@ body {
   font-weight: bolder;
   border-bottom: 2px solid black;
 }
-.main {
-  /* display: flex; */
-}
 
 #container {
   width: 510px;
@@ -36,7 +33,7 @@ body {
 }
 
 .squares {
-  /* border: 0.5px solid rgba(5, 5, 5, 0.452); */
+  border: 0.1px solid rgba(5, 5, 5, 0.062);
 }
 .gridDimension {
   font-size: 1.2rem;
@@ -45,7 +42,6 @@ body {
 }
 
 /* slider styling  */
-
 input[type="range"] {
   -webkit-appearance: none;
   margin: 15px 0;
@@ -60,9 +56,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   cursor: pointer;
   background: #366792bd;
   border-radius: 1.3px;
-  /* border: 0.2px solid #010101; */
 }
-
 /* # chrome  */
 input[type="range"]::-webkit-slider-thumb {
   height: 20px;
@@ -74,16 +68,13 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]:focus::-webkit-slider-runnable-track {
   background: #366792bd;
 }
-
 /* # firefox  */
 input[type="range"]::-moz-range-track {
   width: 100%;
   height: 20px;
   cursor: pointer;
   background: #366792bd;
-  /* border: 10px solid #366792f5; */
 }
-
 /* * # firefox   */
 input[type="range"]::-moz-range-thumb {
   border: none;
@@ -92,39 +83,6 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 1px;
   background: #366792f5;
   cursor: pointer;
-}
-input[type="range"]::-ms-track {
-  width: 100%;
-  height: 8.4px;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  border-width: 16px 0;
-  color: transparent;
-}
-input[type="range"]::-ms-fill-lower {
-  background: #2a6495;
-  border: 0.2px solid #010101;
-  border-radius: 2.6px;
-}
-input[type="range"]::-ms-fill-upper {
-  background: #3071a9;
-  border: 0.2px solid #010101;
-  border-radius: 2.6px;
-}
-input[type="range"]::-ms-thumb {
-  border: 1px solid #000000;
-  height: 20px;
-  width: 16px;
-  border-radius: 3px;
-  background: #ffffff;
-  cursor: pointer;
-}
-input[type="range"]:focus::-ms-fill-lower {
-  background: #3071a9;
-}
-input[type="range"]:focus::-ms-fill-upper {
-  background: #367ebd;
 }
 
 .options {
