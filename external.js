@@ -5,7 +5,7 @@ const input = document.querySelector("input");
 const outputs = document.querySelectorAll("output");
 
 const body = (document.body.ondragstart = (event) => {
-  event.preventDefault();
+  event.preventDefault(); // If someone tries to drag something on the webpage, this stops them from doing it."
 });
 
 // variable to track if drawing is allowed or not
@@ -26,7 +26,7 @@ const pencilButton = document.getElementById("black-pencil");
 let slider = document.getElementById("gridSize");
 
 function createGrid(col, rows) {
-  const fragment = document.createDocumentFragment();
+  const fragment = document.createDocumentFragment(); // creates an empty DocumentFragment object, which is ready to have nodes(bits) inserted into it.
   for (let i = 0; i < col * rows; i++) {
     const div = document.createElement("div");
     fragment.appendChild(div).classList.add("squares");
