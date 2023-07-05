@@ -5,41 +5,40 @@ const input = document.querySelector("input");
 const outputs = document.querySelectorAll("output");
 
 const body = (document.body.ondragstart = (event) => {
-  event.preventDefault(); // If someone tries to drag something on the webpage, this stops them from doing it."
+  event.preventDefault();
 });
 
 // variable to track if drawing is allowed or not
-let stopPencil = false;
-let checkRGB = false;
+let stopPencil = true; // so drawing doesn't start without holding down the mouse
+let checkRGB = true;
 
 // stop drawing when clicking on the grid
 container.addEventListener("click", () => {
-  stopPencil = false;
-  checkRGB = false;
+  stopPencil = true;
+  // checkRGB = ruet;
 });
 
 // buttons
 const pickerButton = document.getElementById("picker");
 const rgbButton = document.getElementById("rgb-shade");
 const resetButton = document.getElementById("reset");
-const pencilButton = document.getElementById("black-pencil");
 let slider = document.getElementById("gridSize");
 
 function createGrid(col, rows) {
-  const fragment = document.createDocumentFragment(); // creates an empty DocumentFragment object, which is ready to have nodes(bits) inserted into it.
+  const bits = document.createDocumentFragment();
   for (let i = 0; i < col * rows; i++) {
     const div = document.createElement("div");
-    fragment.appendChild(div).classList.add("squares");
+    bits.appendChild(div).classList.add("squares");
   }
   container.style.gridTemplateColumns = `repeat(${col}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
   container.style.backgroundColor = "#b5d3edbd";
   container.innerHTML = "";
-  container.appendChild(fragment);
+  container.appendChild(bits);
   attachEventListeners();
 }
 
-createGrid(50, 50);
+createGrid(16, 16);
 
 input.addEventListener("input", () => {
   for (let output of outputs) {
@@ -61,21 +60,20 @@ slider.addEventListener("mouseup", modifyGridSize);
 
 function attachEventListeners() {
   const chooseColor = document.querySelectorAll(".squares");
-  const defaultPencil = document.querySelectorAll(".squares");
   const rainbowShade = document.querySelectorAll(".squares");
+
+  document.addEventListener("mousedown", () => {
+    stopPencil = false;
+  });
+
+  document.addEventListener("mouseup", () => {
+    stopPencil = true;
+  });
 
   chooseColor.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      if (stopPencil && !checkRGB && squares.style.backgroundColor === "") {
+      if (!stopPencil && !checkRGB && squares.style.backgroundColor === "") {
         squares.style.backgroundColor = pickerButton.value;
-      }
-    });
-  });
-
-  defaultPencil.forEach((squares) => {
-    squares.addEventListener("mouseenter", () => {
-      if (stopPencil && checkRGB && squares.style.backgroundColor === "") {
-        squares.style.backgroundColor = "black";
       }
     });
   });
@@ -98,13 +96,8 @@ pickerButton.addEventListener("click", () => {
   checkRGB = false;
 });
 
-pencilButton.addEventListener("click", () => {
-  stopPencil = true;
-  checkRGB = true;
-});
-
 rgbButton.addEventListener("click", () => {
-  stopPencil = false;
+  stopPencil = true;
   checkRGB = true;
 });
 
