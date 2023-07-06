@@ -15,7 +15,7 @@ let checkRGB = true;
 // stop drawing when clicking on the grid
 container.addEventListener("click", () => {
   stopPencil = true;
-  // checkRGB = ruet;
+  checkRGB = true;
 });
 
 // buttons
@@ -62,7 +62,7 @@ slider.addEventListener("mouseup", modifyGridSize);
 function attachEventListeners() {
   const chooseColor = document.querySelectorAll(".squares");
   const rainbowShade = document.querySelectorAll(".squares");
-  const eraseSquare = document.querySelectorAll(".squares");
+  // const eraseSquare = document.querySelectorAll(".squares");
 
   document.addEventListener("mousedown", () => {
     stopPencil = false;
@@ -74,7 +74,7 @@ function attachEventListeners() {
 
   chooseColor.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      if (!stopPencil && !checkRGB && squares.style.backgroundColor === "") {
+      if (!stopPencil && checkRGB && squares.style.backgroundColor === "") {
         squares.style.backgroundColor = pickerButton.value;
       }
     });
@@ -82,7 +82,7 @@ function attachEventListeners() {
 
   rainbowShade.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      if (!stopPencil && checkRGB && squares.style.backgroundColor === "") {
+      if (!stopPencil && !checkRGB && squares.style.backgroundColor === "") {
         const red = Math.floor(Math.random() * 256);
         const green = Math.floor(Math.random() * 256);
         const blue = Math.floor(Math.random() * 256);
@@ -91,29 +91,16 @@ function attachEventListeners() {
       }
     });
   });
-
-  eraseSquare.forEach((squares) => {
-    squares.addEventListener("mouseenter", () => {
-      if (!stopPencil && checkRGB) {
-        squares.style.backgroundColor = "";
-      }
-    });
-  });
 }
 
 pickerButton.addEventListener("click", () => {
   stopPencil = true;
-  checkRGB = false;
+  checkRGB = true;
 });
 
 rgbButton.addEventListener("click", () => {
   stopPencil = true;
-  checkRGB = true;
-});
-
-eraserButton.addEventListener("click", () => {
-  stopPencil = true;
-  checkRGB = true;
+  checkRGB = false;
 });
 
 // refresh page
