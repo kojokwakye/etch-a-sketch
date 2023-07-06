@@ -21,6 +21,7 @@ container.addEventListener("click", () => {
 // buttons
 const pickerButton = document.getElementById("picker");
 const rgbButton = document.getElementById("rgb-shade");
+const eraserButton = document.getElementById("eraser");
 const resetButton = document.getElementById("reset");
 let slider = document.getElementById("gridSize");
 
@@ -61,6 +62,7 @@ slider.addEventListener("mouseup", modifyGridSize);
 function attachEventListeners() {
   const chooseColor = document.querySelectorAll(".squares");
   const rainbowShade = document.querySelectorAll(".squares");
+  const eraseSquare = document.querySelectorAll(".squares");
 
   document.addEventListener("mousedown", () => {
     stopPencil = false;
@@ -89,6 +91,14 @@ function attachEventListeners() {
       }
     });
   });
+
+  eraseSquare.forEach((squares) => {
+    squares.addEventListener("mouseenter", () => {
+      if (stopPencil && checkRGB && squares.style.backgroundColor === "") {
+        squares.style.backgroundColor = "";
+      }
+    });
+  });
 }
 
 pickerButton.addEventListener("click", () => {
@@ -101,6 +111,12 @@ rgbButton.addEventListener("click", () => {
   checkRGB = true;
 });
 
+eraserButton.addEventListener("click", () => {
+  stopPencil = true;
+  checkRGB = false;
+});
+
+// refresh page
 function clearGrid() {
   location.reload();
 }
