@@ -94,7 +94,7 @@ function attachEventListeners() {
 
   eraseSquare.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      if (stopPencil && checkRGB && squares.style.backgroundColor === "") {
+      if (!stopPencil && checkRGB) {
         squares.style.backgroundColor = "";
       }
     });
@@ -113,7 +113,7 @@ rgbButton.addEventListener("click", () => {
 
 eraserButton.addEventListener("click", () => {
   stopPencil = true;
-  checkRGB = false;
+  checkRGB = true;
 });
 
 // refresh page
