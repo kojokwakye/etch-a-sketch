@@ -1,8 +1,8 @@
 "use strict";
 
 const container = document.getElementById("container");
-const input = document.querySelector("input");
 const outputs = document.querySelectorAll("output");
+const input = document.querySelector(".sliderClass");
 
 const body = (document.body.ondragstart = (event) => {
   event.preventDefault(); // dont drag anything on the page
