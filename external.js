@@ -15,7 +15,7 @@ let checkRGB = true;
 // stop drawing when clicking on the grid
 container.addEventListener("click", () => {
   stopPencil = true;
-  checkRGB = false;
+  // checkRGB = true;
 });
 
 // buttons
@@ -66,17 +66,15 @@ function attachEventListeners() {
 
   document.addEventListener("mousedown", () => {
     stopPencil = false;
-    // checkRGB = true;
   });
 
   document.addEventListener("mouseup", () => {
     stopPencil = true;
-    // checkRGB = true;
   });
 
   chooseColor.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      if (!stopPencil && squares.style.backgroundColor === "") {
+      if (!stopPencil && !checkRGB && squares.style.backgroundColor === "") {
         squares.style.backgroundColor = pickerButton.value;
       }
     });
@@ -84,7 +82,7 @@ function attachEventListeners() {
 
   rainbowShade.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      if (!stopPencil && !checkRGB && squares.style.backgroundColor === "") {
+      if (!stopPencil && checkRGB && squares.style.backgroundColor === "") {
         const red = Math.floor(Math.random() * 256);
         const green = Math.floor(Math.random() * 256);
         const blue = Math.floor(Math.random() * 256);
@@ -97,11 +95,11 @@ function attachEventListeners() {
 
 pickerButton.addEventListener("click", () => {
   stopPencil = true;
-  checkRGB = true;
+  checkRGB = false;
 });
 
 rgbButton.addEventListener("click", () => {
-  stopPencil = false;
+  stopPencil = true;
   checkRGB = true;
 });
 
