@@ -66,7 +66,7 @@ function attachEventListeners() {
 
   document.addEventListener("mousedown", () => {
     stopPencil = false;
-    checkRGB = false;
+    // checkRGB = false;
   });
 
   document.addEventListener("mouseup", () => {
@@ -84,7 +84,7 @@ function attachEventListeners() {
 
   rainbowShade.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      if (!stopPencil && checkRGB && squares.style.backgroundColor === "") {
+      if (stopPencil && !checkRGB && squares.style.backgroundColor === "") {
         const red = Math.floor(Math.random() * 256);
         const green = Math.floor(Math.random() * 256);
         const blue = Math.floor(Math.random() * 256);
@@ -99,9 +99,10 @@ pickerButton.addEventListener("click", () => {
   stopPencil = true;
   checkRGB = true;
 });
+git;
 
 rgbButton.addEventListener("click", () => {
-  stopPencil = false;
+  stopPencil = true;
   checkRGB = true;
 
   // there's something going on here. it's bug/feature. who wants to hold the mouse down whiles drawing random rgb colors? not me
