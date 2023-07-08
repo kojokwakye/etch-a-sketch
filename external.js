@@ -5,7 +5,7 @@ const input = document.querySelector("input");
 const outputs = document.querySelectorAll("output");
 
 const body = (document.body.ondragstart = (event) => {
-  event.preventDefault();
+  event.preventDefault(); // dont drag anything on the page
 });
 
 // variable to track if drawing is allowed or not
@@ -15,7 +15,7 @@ let checkRGB = true;
 // stop drawing when clicking on the grid
 container.addEventListener("click", () => {
   stopPencil = true;
-  checkRGB = true;
+  checkRGB = false;
 });
 
 // buttons
@@ -66,15 +66,17 @@ function attachEventListeners() {
 
   document.addEventListener("mousedown", () => {
     stopPencil = false;
+    // checkRGB = true;
   });
 
   document.addEventListener("mouseup", () => {
     stopPencil = true;
+    // checkRGB = true;
   });
 
   chooseColor.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      if (!stopPencil && checkRGB && squares.style.backgroundColor === "") {
+      if (!stopPencil && squares.style.backgroundColor === "") {
         squares.style.backgroundColor = pickerButton.value;
       }
     });
@@ -99,8 +101,8 @@ pickerButton.addEventListener("click", () => {
 });
 
 rgbButton.addEventListener("click", () => {
-  stopPencil = true;
-  checkRGB = false;
+  stopPencil = false;
+  checkRGB = true;
 });
 
 // refresh page
