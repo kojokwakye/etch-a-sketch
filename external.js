@@ -36,7 +36,6 @@ function createGrid(col, rows) {
   container.style.backgroundColor = "#b5d3edbd";
   container.innerHTML = "";
   container.appendChild(bits);
-  attachEventListeners();
 }
 
 createGrid(16, 16);
@@ -56,22 +55,20 @@ function modifyGridSize() {
     output.textContent = slider.value;
   });
 }
-
 slider.addEventListener("mouseup", modifyGridSize);
 
-function attachEventListeners() {
-  const chooseColor = document.querySelectorAll(".squares");
-  const rainbowShade = document.querySelectorAll(".squares");
-  // const eraseSquare = document.querySelectorAll(".squares");
+document.addEventListener("mousedown", () => {
+  stopPencil = false;
+});
 
-  document.addEventListener("mousedown", () => {
-    stopPencil = false;
-  });
+document.addEventListener("mouseup", () => {
+  stopPencil = true;
+});
 
-  document.addEventListener("mouseup", () => {
-    stopPencil = true;
-  });
+// color picker
 
+const chooseColor = document.querySelectorAll(".squares");
+function chosenShade() {
   chooseColor.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
       if (!stopPencil && !checkRGB && squares.style.backgroundColor === "") {
@@ -79,7 +76,16 @@ function attachEventListeners() {
       }
     });
   });
+}
+pickerButton.addEventListener("click", () => {
+  stopPencil = true;
+  checkRGB = false;
+  chosenShade();
+});
 
+// rainbow-shade
+const rainbowShade = document.querySelectorAll(".squares");
+function rgbShade() {
   rainbowShade.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
       if (!stopPencil && checkRGB && squares.style.backgroundColor === "") {
@@ -92,17 +98,30 @@ function attachEventListeners() {
     });
   });
 }
-
-pickerButton.addEventListener("click", () => {
-  stopPencil = true;
-  checkRGB = false;
-});
-
 rgbButton.addEventListener("click", () => {
   stopPencil = true;
   checkRGB = true;
+  rgbShade();
 });
 
+const eraseBox = document.querySelectorAll(".squares");
+function eraseSquare() {
+  eraseBox.forEach((squares) => {
+    squares.addEventListener("mouseenter", () => {
+      if (!stopPencil && !checkRGB && squares.style.backgroundColor === "") {
+        squares.style.backgroundColor = "red";
+      }
+    });
+  });
+}
+
+eraserButton.addEventListener("click", () => {
+  stopPencil = true;
+  checkRGB = false;
+  eraseSquare();
+});
+
+//// dont touch anything below
 // refresh page
 function clearGrid() {
   location.reload();
