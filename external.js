@@ -81,6 +81,7 @@ pickerButton.addEventListener("click", () => {
   stopPencil = true;
   checkRGB = false;
   chosenShade();
+  console.log("color-picker button");
 });
 
 // rainbow-shade
@@ -88,7 +89,7 @@ const rainbowShade = document.querySelectorAll(".squares");
 function rgbShade() {
   rainbowShade.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      if (!stopPencil && checkRGB && squares.style.backgroundColor === "") {
+      if (!stopPencil && !checkRGB && squares.style.backgroundColor === "") {
         const red = Math.floor(Math.random() * 256);
         const green = Math.floor(Math.random() * 256);
         const blue = Math.floor(Math.random() * 256);
@@ -102,14 +103,16 @@ rgbButton.addEventListener("click", () => {
   stopPencil = true;
   checkRGB = true;
   rgbShade();
+  console.log("rgb");
 });
 
+// eraser
 const eraseBox = document.querySelectorAll(".squares");
 function eraseSquare() {
   eraseBox.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      if (!stopPencil && !checkRGB && squares.style.backgroundColor === "") {
-        squares.style.backgroundColor = "red";
+      if (!stopPencil && !checkRGB) {
+        squares.style.backgroundColor = "";
       }
     });
   });
@@ -119,6 +122,7 @@ eraserButton.addEventListener("click", () => {
   stopPencil = true;
   checkRGB = false;
   eraseSquare();
+  console.log("eraser");
 });
 
 //// dont touch anything below
