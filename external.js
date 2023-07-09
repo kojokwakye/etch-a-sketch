@@ -15,7 +15,7 @@ let checkRGB = true;
 // stop drawing when clicking on the grid
 container.addEventListener("click", () => {
   stopPencil = true;
-  // checkRGB = true;
+  checkRGB = true;
 });
 
 // buttons
@@ -89,7 +89,7 @@ const rainbowShade = document.querySelectorAll(".squares");
 function rgbShade() {
   rainbowShade.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
-      if (!stopPencil && !checkRGB && squares.style.backgroundColor === "") {
+      if (!stopPencil && checkRGB && squares.style.backgroundColor === "") {
         const red = Math.floor(Math.random() * 256);
         const green = Math.floor(Math.random() * 256);
         const blue = Math.floor(Math.random() * 256);
