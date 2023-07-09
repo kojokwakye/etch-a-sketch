@@ -154,6 +154,12 @@ img {
   opacity: 0.5;
 }
 
-@media screen {
+@media only screen and (max-device-width: 700px) {
   /* maybe never 30/06/23  */
+
+  body {
+    min-height: 100vh;
+    font-size: 1em;
+    display: block;
+  }
 }
