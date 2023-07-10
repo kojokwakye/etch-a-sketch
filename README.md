@@ -5,7 +5,7 @@ This program allows users to draw on the grid using a chosen color or random RGB
 
 ## SCREENSHOT
 
-![demo](media/Screenshot%20from%202023-07-01%2016-39-28.png)
+![demo](media/Screenshot%20from%202023-07-10%2003-16-04.png)
 
 ## MANUAL
 
