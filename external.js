@@ -5,7 +5,7 @@ const outputs = document.querySelectorAll("output");
 const input = document.querySelector(".sliderClass");
 
 const body = (document.body.ondragstart = (event) => {
-  event.preventDefault(); // dont drag anything on the page
+  event.preventDefault(); // don't drag anything on the page
 });
 
 // variable to track if drawing is allowed or not
@@ -36,6 +36,7 @@ function createGrid(col, rows) {
   container.style.backgroundColor = "#b5d3edbd";
   container.innerHTML = "";
   container.appendChild(bits);
+  attachEventListeners();
 }
 
 createGrid(16, 16);
@@ -57,18 +58,20 @@ function modifyGridSize() {
 }
 slider.addEventListener("mouseup", modifyGridSize);
 
-document.addEventListener("mousedown", () => {
-  stopPencil = false;
-});
+function attachEventListeners() {
+  const chooseColor = document.querySelectorAll(".squares");
+  const rainbowShade = document.querySelectorAll(".squares");
+  const eraseBox = document.querySelectorAll(".squares");
 
-document.addEventListener("mouseup", () => {
-  stopPencil = true;
-});
+  document.addEventListener("mousedown", () => {
+    stopPencil = false;
+  });
 
-// color picker
+  document.addEventListener("mouseup", () => {
+    stopPencil = true;
+    // checkRGB = true;
+  });
 
-const chooseColor = document.querySelectorAll(".squares");
-function chosenShade() {
   chooseColor.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
       if (!stopPencil && !checkRGB && squares.style.backgroundColor === "") {
@@ -76,17 +79,7 @@ function chosenShade() {
       }
     });
   });
-}
-pickerButton.addEventListener("click", () => {
-  stopPencil = true;
-  checkRGB = false;
-  chosenShade();
-  console.log("color-picker button");
-});
 
-// rainbow-shade
-const rainbowShade = document.querySelectorAll(".squares");
-function rgbShade() {
   rainbowShade.forEach((squares) => {
     squares.addEventListener("mouseenter", () => {
       if (!stopPencil && checkRGB && squares.style.backgroundColor === "") {
@@ -98,32 +91,36 @@ function rgbShade() {
       }
     });
   });
+
+  // eraseBox.forEach((squares) => {
+  //   squares.addEventListener("mouseenter", () => {
+  //     if (!stopPencil && !checkRGB) {
+  //       squares.style.backgroundColor = "";
+  //     }
+  //   });
+  // });
 }
+
+// color picker
+pickerButton.addEventListener("click", () => {
+  stopPencil = true;
+  checkRGB = false;
+  console.log("color-picker button");
+});
+
+// rainbow-shade
 rgbButton.addEventListener("click", () => {
   stopPencil = true;
   checkRGB = true;
-  rgbShade();
   console.log("rgb");
 });
 
 // eraser
-const eraseBox = document.querySelectorAll(".squares");
-function eraseSquare() {
-  eraseBox.forEach((squares) => {
-    squares.addEventListener("mouseenter", () => {
-      if (!stopPencil && !checkRGB) {
-        squares.style.backgroundColor = "";
-      }
-    });
-  });
-}
-
-eraserButton.addEventListener("click", () => {
-  stopPencil = true;
-  checkRGB = false;
-  eraseSquare();
-  console.log("eraser");
-});
+// eraserButton.addEventListener("click", () => {
+//   stopPencil = true;
+//   checkRGB = false;
+//   console.log("eraser");
+// });
 
 //// dont touch anything below
 // refresh page
