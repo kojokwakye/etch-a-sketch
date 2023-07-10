@@ -11,6 +11,8 @@ const body = (document.body.ondragstart = (event) => {
 // variable to track if drawing is allowed or not
 let stopPencil = true; // so drawing doesn't start without holding down the mouse
 let checkRGB = true;
+// a variable to track whether the eraser is active or not
+let eraseMode = false;
 
 // stop drawing when clicking on the grid
 container.addEventListener("click", () => {
@@ -92,19 +94,26 @@ function attachEventListeners() {
     });
   });
 
-  // eraseBox.forEach((squares) => {
-  //   squares.addEventListener("mouseenter", () => {
-  //     if (!stopPencil && !checkRGB) {
-  //       squares.style.backgroundColor = "";
-  //     }
-  //   });
-  // });
+  eraseBox.forEach((squares) => {
+    squares.addEventListener("mouseenter", () => {
+      if (!stopPencil && !checkRGB && eraseMode) {
+        squares.style.backgroundColor = "";
+      } else if (
+        !stopPencil &&
+        !checkRGB &&
+        squares.style.backgroundColor === ""
+      ) {
+        squares.style.backgroundColor = pickerButton.value;
+      }
+    });
+  });
 }
 
 // color picker
 pickerButton.addEventListener("click", () => {
   stopPencil = true;
   checkRGB = false;
+  eraseMode = false; // Disable erase mode when the color picker button is clicked
   console.log("color-picker button");
 });
 
@@ -115,12 +124,11 @@ rgbButton.addEventListener("click", () => {
   console.log("rgb");
 });
 
-// eraser
-// eraserButton.addEventListener("click", () => {
-//   stopPencil = true;
-//   checkRGB = false;
-//   console.log("eraser");
-// });
+eraserButton.addEventListener("click", () => {
+  eraseMode = !eraseMode;
+  checkRGB = false;
+  console.log("eraser");
+});
 
 //// dont touch anything below
 // refresh page
