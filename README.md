@@ -11,15 +11,15 @@ This program allows users to draw on the grid using a chosen color or random RGB
 
 The Etch-a-Sketch program is a browser application that allows users to draw on a grid using different colors. Here's a summary of its functionality:
 
-1. The program creates a 16x16 grid of square elements on the webpage.
+1. The program creates a 16x16 grid of square by default on the webpage.
 
 2. Users can choose a color using the color picker.
 
 3. By holding the mouse down over the squares on the grid, users can draw on the grid.
 
-4. Click once on the grid disables drawing mode to prevent accidental drawing. I guess there's nothing like an "accident" when it comes to an etch-a-sketch.
+4. Click once on the grid to disable drawing mode and prevent accidental drawing. I guess there's nothing like an "accident" when it comes to an etch-a-sketch.
 
-5. Additionally, there is an RGB mode button that enables random color generation. In this mode, hovering over squares applies random RGB colors to the grid.
+5. Additionally, there is an RGB mode button that enables random color generation. In this mode, holding mouse down over squares applies random RGB colors to the grid.
 
 6. There's a slider for choosing different grid sizes.
 
