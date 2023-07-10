@@ -15,7 +15,7 @@ let checkRGB = true;
 // stop drawing when clicking on the grid
 container.addEventListener("click", () => {
   stopPencil = true;
-  checkRGB = true;
+  // checkRGB = true;
 });
 
 // buttons
