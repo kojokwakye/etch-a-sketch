@@ -137,11 +137,17 @@ button:hover {
   transition: 0.7s;
   color: black;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .links {
   cursor: pointer;
   display: flex;
   justify-content: space-around;
+  /* outline: 1px solid red; */
+  border: 1px solid #000000c4;
 }
 
 img {
