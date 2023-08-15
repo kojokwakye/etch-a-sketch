@@ -97,7 +97,6 @@ input[type="range"]::-moz-range-thumb {
 
 .buttons {
   display: flex;
-
   margin: 10px;
   flex-direction: column;
   align-items: center;
@@ -137,6 +136,7 @@ button:hover {
   transition: 0.7s;
   color: black;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -145,19 +145,9 @@ a {
 .links {
   cursor: pointer;
   display: flex;
+  align-items: center;
   justify-content: space-around;
-  /* outline: 1px solid red; */
   border: 1px solid #000000c4;
-}
-
-img {
-  width: 35px;
-  height: 35px;
-}
-
-.github-icon:hover,
-.code-icon:hover {
-  opacity: 0.5;
 }
 
 @media only screen and (max-device-width: 700px) {
