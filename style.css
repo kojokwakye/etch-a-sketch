@@ -30,6 +30,7 @@ body {
   height: 510px;
   display: grid;
   border: 0.1px solid rgba(5, 5, 5, 0.062);
+  cursor: url("images/icons8-draw-24.png"), default;
 }
 
 .squares {
