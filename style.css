@@ -95,14 +95,14 @@ input[type="range"]::-moz-range-thumb {
   justify-content: space-between;
 }
 
-.buttons {
+/* .buttons {
   display: flex;
   margin: 10px;
   flex-direction: column;
   align-items: center;
   gap: 30px;
   flex-wrap: wrap;
-}
+} */
 
 button {
   color: #000000c4;
@@ -118,11 +118,9 @@ button {
 .slider-section {
   text-align: center;
 }
-.choices {
-  text-align: center;
-}
+
 #picker {
-  width: 100px;
+  /* width: 100px; */
   cursor: pointer;
   background: transparent;
   border: 1px solid #000000c4;

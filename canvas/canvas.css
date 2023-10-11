@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+
+body {
+  background: #b5d3eda1;
+  min-height: 100vh;
+  font-family: "Space Mono", monospace;
+  font-size: 1em;
+}
