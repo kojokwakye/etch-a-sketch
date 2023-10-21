@@ -20,13 +20,26 @@ body {
 h1 {
   text-align: center;
   min-height: 50px;
-  background: lightcyan;
+  background: white;
 }
 #container {
   width: 100%;
   height: 100%;
   display: grid;
   border: 0.1px solid rgba(5, 5, 5, 0.062);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+div#sheet {
+  display: grid;
+  grid-template-columns: 120px 2fr;
 }
 
 .squares {
@@ -83,25 +96,19 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
 }
 
-.options {
-  display: flex;
-  margin-right: 40px;
-  flex-wrap: wrap;
-  flex-direction: column;
-  height: 510px;
-  justify-content: space-between;
-}
-
 button {
   color: #000000c4;
   font-size: 1em;
-  width: 150px;
   cursor: pointer;
   background: transparent;
-  border: 1px solid #000000c4;
+  border: none;
   outline: none;
-  padding: 1em 1.5em;
-  margin: auto;
+  padding: 1em 1.3em;
+}
+button:hover {
+  background-color: #00000061;
+  transition: 0.7s;
+  color: black;
 }
 .slider-section {
   text-align: center;
@@ -117,22 +124,15 @@ button {
   outline: none;
 }
 
-button:hover {
-  background-color: #00000061;
-  transition: 0.7s;
-  color: black;
-}
-
 a {
   text-decoration: none;
   color: inherit;
 }
 
 footer {
-  min-height: 50px;
-  background: PapayaWhip;
+  min-height: 40px;
+  background: white;
   display: flex;
-  gap: 1rem;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }

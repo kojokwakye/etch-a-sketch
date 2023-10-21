@@ -1,6 +1,7 @@
 "use strict";
 
 const container = document.getElementById("container");
+const resetButton = document.getElementById("reset");
 const body = (document.body.ondragstart = (event) => {
   event.preventDefault(); // don't drag anything on the page
 });
@@ -85,6 +86,11 @@ rgbButton.addEventListener("click", () => {
   checkRGB = true;
   console.log("rgb");
 });
+
+function clearGrid() {
+  location.reload();
+}
+resetButton.addEventListener("click", clearGrid);
 
 // screenshot
 $("#screenshot").on("click", function () {
