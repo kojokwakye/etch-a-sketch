@@ -4,34 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/canvas/canvas.css" />
-    <script src="canvas/canvas.js" defer></script>
+    <script src="/canvas/canvas.js" defer></script>
     <title>canvas</title>
   </head>
   <body>
-    <div class="top-bar">
-      <h1>blank canvas</h1>
-    </div>
-    <div class="drawing-space">
-      <div class="selector">
-        <input
-          orient="vertical"
-          class="sliderClass"
-          id="gridSize"
-          type="range"
-          name="gridSize"
-        />
-        <input type="color" id="picker" value="#000000" />
-      </div>
-      <div class="empty-sheet">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi repellat
-        tempora deleniti numquam, ratione incidunt, consequatur beatae alias
-        consectetur vitae magni aliquam magnam eligendi nihil velit eos
-        doloremque molestias? Cumque!
+    <div class="main">
+      <div class="top-bar">
+        <h1>blank canvas</h1>
       </div>
     </div>
+
+    <div id="sheet">
+      <div id="container"></div>
+    </div>
+
     <footer>
       <div>right arrow</div>
-      <div>screenshot</div>
+      <button id="screenshot">screenshot</button>
+      <button id="rgb-shade">rgb</button>
       <div>clear canvas</div>
     </footer>
   </body>
